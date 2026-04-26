@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# Ace of Aces - Simulador de Combate Aéreo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto **Open Source** que digitaliza a experiência do clássico jogo de combate aéreo "Ace of Aces". O simulador está em fase de criação, mas já se encontra bem funcional, permitindo a execução de manobras e o combate entre aeronaves.
 
-Currently, two official plugins are available:
+> [!IMPORTANT]
+> O projeto ainda está em desenvolvimento e faltam muitas páginas do livro para serem cadastradas. Se você quiser contribuir, por favor, veja a seção de **ISSUES**!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Instalação e Execução
 
-## React Compiler
+Siga os passos abaixo para rodar o projeto localmente:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/robertohbr1/AceOfAces.git
+   ```
 
-## Expanding the ESLint configuration
+2. **Entre na pasta do projeto:**
+   ```bash
+   cd AceOfAces
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+4. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+5. Abra o navegador no endereço indicado (geralmente `http://localhost:5173`).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🕹️ Funcionamento Atual
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+O jogo simula o duelo entre dois aviões da Primeira Guerra Mundial (como o Fokker Dr.I e o Sopwith Camel).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Cockpit Dinâmico:** Você visualiza a posição do inimigo através de uma representação visual baseada nas páginas do livro original.
+- **Seleção de Manobras:** Escolha entre diversas manobras (Curvas, Loops, Slips, etc.) no painel de controle.
+- **Resolução de Turnos:** O sistema calcula a nova página de visualização baseada na combinação da sua manobra com a do oponente.
+- **Sistema de Danos:** Certas páginas resultam em dano para uma ou ambas as aeronaves, reduzindo a integridade (HP).
+- **Inteligência Artificial:** O jogo possui uma IA básica que pode ser ativada para controlar o oponente.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Como Ajudar (Cadastramento de Dados)
+
+O maior desafio atual é o mapeamento das milhares de combinações de páginas do livro original para o formato digital.
+
+**Como você pode ajudar:**
+1. Vá até a aba [**Issues**](https://github.com/robertohbr1/AceOfAces/issues) do repositório.
+2. Procure por tarefas de "Cadastramento de Páginas" ou "Mapeamento de Danos".
+3. Siga as instruções para adicionar novos dados aos arquivos `src/game/book_data.ts` e `src/game/engine.ts`.
+
+Sua ajuda é fundamental para completarmos este simulador!
+
+---
+Desenvolvido com React, TypeScript e Vite.
