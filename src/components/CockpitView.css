@@ -1,0 +1,133 @@
+.cockpit-container {
+  width: 100%;
+  flex: 3;
+  min-height: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack images and footer */
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, rgba(10, 14, 18, 0.8) 0%, rgba(5, 7, 9, 1) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hud-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50px; /* Space for the new footer height */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.cockpit-images-container {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  padding: 10px 10px 20px 10px; /* Padding at bottom to avoid touching footer */
+  z-index: 0;
+  background: rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+.cockpit-images-container img {
+  flex: 1;
+  height: 100%;
+  width: 50%;
+  object-fit: contain; /* Show the full book page without cropping */
+  opacity: 0.9;
+  display: none; /* Controlled by React onLoad/onError */
+}
+
+
+
+.hud-info {
+  position: absolute;
+  z-index: 20;
+}
+
+.top-left {
+  top: 1rem;
+  left: 1rem;
+}
+
+.top-right {
+  top: 1rem;
+  right: 1rem;
+}
+
+.text-right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.hp-bar {
+  display: flex;
+  gap: 4px;
+}
+
+.hp-bar.right {
+  justify-content: flex-end;
+}
+
+.hp-segment {
+  width: 20px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+}
+
+.hp-segment.active {
+  background: var(--color-hud-green);
+  border-color: var(--color-hud-green);
+  box-shadow: 0 0 8px var(--color-hud-green-glow);
+}
+
+.hp-segment.active.enemy {
+  background: var(--color-hud-red);
+  border-color: var(--color-hud-red);
+  box-shadow: 0 0 8px rgba(255, 51, 51, 0.3);
+}
+
+.cockpit-footer {
+  width: 100%;
+  height: 50px; /* Slightly smaller footer */
+  background: #000;
+  border-top: 1px solid var(--color-glass-border);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  gap: 2rem;
+  z-index: 20;
+  flex-shrink: 0; /* Don't allow footer to shrink */
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-item .label {
+  margin-bottom: 0;
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.status-separator {
+  width: 1px;
+  height: 30px;
+  background: var(--color-glass-border);
+}

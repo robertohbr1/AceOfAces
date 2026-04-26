@@ -1,0 +1,192 @@
+.control-panel-container {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  gap: 0.25rem;
+}
+
+.sticky-header {
+  margin: 0;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--color-glass-border);
+}
+
+.maneuver-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.tailing-warning {
+  font-size: 0.7rem;
+  padding: 4px;
+  border: 1px dashed var(--color-hud-amber);
+  text-align: center;
+  background: rgba(255, 170, 0, 0.05);
+  margin-bottom: 2px;
+}
+
+.speed-frames-container {
+  display: flex;
+  flex-direction: row; /* Main speed frames side by side */
+  gap: 8px;
+  width: 100%;
+  padding-bottom: 4px;
+}
+
+.speed-frame {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Label on top of buttons */
+  gap: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.speed-label {
+  font-family: var(--font-hud);
+  font-size: 0.5rem;
+  text-align: center;
+  color: var(--color-hud-amber);
+  opacity: 0.6;
+  padding: 1px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.direction-groups {
+  display: flex;
+  flex-direction: row; /* Direction groups side by side */
+  gap: 2px;
+  width: 100%;
+}
+
+.dir-group {
+  display: flex;
+  flex-direction: row; /* BUTTONS SIDE BY SIDE - THIS IS KEY */
+  gap: 2px;
+  flex: 1;
+}
+
+.dir-group:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding-right: 2px;
+}
+
+.control-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  padding: 1px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0; /* Allow shrinking to fit */
+  height: 36px;
+  position: relative;
+}
+
+.dest-page {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #fff;
+  opacity: 0.9;
+  line-height: 1;
+}
+
+.btn-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.main-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.control-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--color-hud-green);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 0;
+}
+
+.control-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--color-hud-green-glow);
+}
+
+.control-btn:hover:not(:disabled)::before {
+  opacity: 0.1;
+}
+
+.control-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.control-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+.control-btn .icon {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.control-btn .text {
+  font-size: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  opacity: 0.7;
+  line-height: 1;
+}
+
+/* Speed indicators */
+.speed-fast { border-top: 2px solid var(--color-hud-green); }
+.speed-cruising { border-top: 1px solid var(--color-hud-green); }
+.speed-slow { border-top: 1px dashed rgba(0, 255, 102, 0.5); }
+
+/* Variants */
+.control-btn.evade {
+  color: #00e5ff;
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+.control-btn.evade::before {
+  background: #00e5ff;
+}
+
+.control-btn.warning {
+  color: var(--color-hud-amber);
+  border-color: rgba(255, 170, 0, 0.3);
+}
+
+.control-btn.warning::before {
+  background: var(--color-hud-amber);
+}
+
+.control-btn.danger {
+  color: var(--color-hud-red);
+  border-color: rgba(255, 51, 51, 0.5);
+  background: rgba(255, 51, 51, 0.1);
+}
+
+.control-btn.danger::before {
+  background: var(--color-hud-red);
+}
