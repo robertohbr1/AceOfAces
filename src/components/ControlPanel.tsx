@@ -82,7 +82,7 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
             TAILING ADVANTAGE! ENEMY INTENDS: {enemyIntention.toUpperCase()}
           </div>
         )}
-        
+
         <div className="speed-frames-container">
           {/* --- SLOW (LENTAS) --- */}
           <div className="speed-frame slow">

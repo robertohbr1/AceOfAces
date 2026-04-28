@@ -3,3 +3,6 @@ Site que apresenta toda a lógica do jogo: https://gametek.substack.com/p/all-ab
 Livros escanados:
 https://archive.org/details/aceofaces0000germ/page/20/mode/2up
 https://archive.org/details/aceofaces0000alli/page/20/mode/2up
+
+Solicitar para IA:
+Analise o book_data.ts. Veja a imagem g12.png e preencha o bookData da linha 12 do G, seguindo a ordem que está na imagem
