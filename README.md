@@ -29,6 +29,11 @@ Siga os passos abaixo para rodar o projeto localmente:
    npm run dev
    ```
 
+   Ou, no PowerShell (Windows), execute o script da raiz:
+   ```powershell
+   .\exec.ps1
+   ```
+
 5. Abra o navegador no endereço indicado (geralmente `http://localhost:5173`).
 
 ## 🕹️ Funcionamento Atual
